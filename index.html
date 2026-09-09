@@ -4,8 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2C0A15">
-<title>Thakur Ji Sweets — Pure Desi Ghee Mithai, Kanpur</title>
-<meta name="description" content="Thakur Ji Sweets — handcrafted pure desi ghee mithai on Birhana Road, Kanpur. Jalebi, laddus, barfi, ghewar, Janmashtami prashad and premium gift boxes.">
+<title>Thakur Ji Sweets — Pure Desi Ghee Sweets, Kanpur</title>
+<meta name="description" content="Thakur Ji Sweets — handcrafted pure desi ghee sweets on Birhana Road, Kanpur. Ganesh Chaturthi special ladoo and modak, jalebi, barfi, ghewar and premium gift boxes.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Thakur Ji Sweets",
+  "description": "Premium pure desi ghee sweets shop in Kanpur, serving ladoo, modak, jalebi, barfi and festive sweets including Ganesh Chaturthi specials, from our Birhana Road store.",
+  "url": "https://thakurjisweets.com",
+  "telephone": "+91 93893 54113",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kanodia Building, 58/74, Birhana Road, Naughara",
+    "addressLocality": "Kanpur",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "208001",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "23:00"
+  },
+  "sameAs": ["https://instagram.com/thakurjisweetskanpur"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +44,8 @@
     --gold-light:#E4CA84;
     --green:#243F2C;
     --krishna-blue:#233B6E;
+    --saffron:#C2701E;
+    --saffron-light:#E7A854;
     --ink:#2A1810;
     --ink-soft:#5c4636;
     --max:1180px;
@@ -113,8 +140,9 @@
   header.scrolled .nav-links a{ color:var(--ink); }
   .nav-links a:hover{ opacity:1; color:var(--gold-light); }
   header.scrolled .nav-links a:hover{ color:var(--maroon); }
-  .nav-jm{ position:relative; }
-  .nav-jm::after{ content:''; position:absolute; top:-3px; right:-9px; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  .nav-badge{ position:relative; }
+  .nav-badge::after{ content:''; position:absolute; top:-3px; right:-9px; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   .btn{
     display:inline-flex; align-items:center; justify-content:center; padding:14px 28px; border:1px solid var(--gold);
     font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
@@ -218,43 +246,6 @@
   .card-order:hover{ color:var(--gold); gap:10px; }
   .card-order span{ font-size:14px; }
 
-  /* ---------- Janmashtami Special ---------- */
-  .janmashtami{
-    background:linear-gradient(180deg, var(--cream-soft), var(--cream));
-    position:relative; overflow:hidden;
-  }
-  .janmashtami::before{
-    content:''; position:absolute; top:-140px; right:-140px; width:360px; height:360px;
-    border-radius:50%; background:radial-gradient(circle, rgba(35,59,110,.10), transparent 70%);
-  }
-  .janmashtami::after{
-    content:''; position:absolute; bottom:-140px; left:-140px; width:320px; height:320px;
-    border-radius:50%; background:radial-gradient(circle, rgba(190,154,78,.12), transparent 70%);
-  }
-  .jm-badge{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--krishna-blue); color:var(--gold-light);
-    padding:8px 18px; border-radius:999px;
-    font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
-    margin-bottom:18px;
-  }
-  .jm-badge svg{ width:16px; height:16px; flex-shrink:0; }
-  .jm-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;
-    position:relative; z-index:1;
-  }
-  .jm-card{
-    background:var(--cream-soft); border:1px solid rgba(190,154,78,.4);
-    padding:18px 18px 24px; position:relative; text-align:left;
-  }
-  .jm-card::before{
-    content:''; position:absolute; top:-1px; left:-1px; right:-1px; height:3px;
-    background:linear-gradient(90deg, var(--gold), var(--krishna-blue));
-  }
-  .jm-card .frame{ aspect-ratio:1/1; margin-bottom:16px; }
-  .jm-cta{ text-align:center; margin-top:54px; position:relative; z-index:1; }
-  .jm-cta p{ color:var(--ink-soft); margin-bottom:22px; font-size:15.5px; }
-
   /* ---------- Floating WhatsApp order button ---------- */
   .fab-whatsapp{
     position:fixed; bottom:22px; right:22px; z-index:150;
@@ -265,6 +256,93 @@
   }
   .fab-whatsapp:hover{ transform:scale(1.08); }
   .fab-whatsapp svg{ width:27px; height:27px; }
+
+  /* ---------- Ganesh Chaturthi Special ---------- */
+  .ganesh{
+    background:linear-gradient(180deg, var(--cream), var(--cream-soft));
+    position:relative; overflow:hidden;
+  }
+  .ganesh::before{
+    content:''; position:absolute; top:-150px; left:-120px; width:360px; height:360px;
+    border-radius:50%; background:radial-gradient(circle, rgba(194,112,30,.10), transparent 70%);
+  }
+  .ganesh::after{
+    content:''; position:absolute; bottom:-150px; right:-120px; width:340px; height:340px;
+    border-radius:50%; background:radial-gradient(circle, rgba(190,154,78,.14), transparent 70%);
+  }
+  .gc-particle{
+    position:absolute; border-radius:50%; background:var(--saffron-light);
+    opacity:.35; pointer-events:none; animation:gcFloat 7s ease-in-out infinite;
+  }
+  .gc-particle:nth-child(1){ width:8px; height:8px; top:14%; left:8%; animation-delay:0s; }
+  .gc-particle:nth-child(2){ width:5px; height:5px; top:30%; right:12%; animation-delay:1.6s; background:var(--gold); }
+  .gc-particle:nth-child(3){ width:6px; height:6px; bottom:20%; left:16%; animation-delay:3s; }
+  @keyframes gcFloat{ 0%,100%{ transform:translateY(0); opacity:.25; } 50%{ transform:translateY(-14px); opacity:.55; } }
+  .gc-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--saffron); color:var(--cream-soft);
+    padding:8px 18px; border-radius:999px;
+    font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
+    margin-bottom:18px;
+  }
+  .gc-badge svg{ width:16px; height:16px; flex-shrink:0; }
+  .gc-tagline{
+    font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--maroon);
+    font-size:20px; margin-bottom:14px;
+  }
+  .gc-location-line{
+    display:inline-flex; align-items:center; gap:7px;
+    color:var(--ink-soft); font-size:14px; font-weight:600; margin-top:8px;
+  }
+  .gc-location-line svg{ width:15px; height:15px; color:var(--saffron); flex-shrink:0; }
+  .gc-ctas{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
+
+  .gc-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:30px;
+    position:relative; z-index:1; margin-top:10px;
+  }
+  .gc-card{
+    background:var(--cream-soft); border:1px solid rgba(190,154,78,.4);
+    padding:18px 18px 24px; position:relative; text-align:left;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .gc-card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(44,10,21,.10); }
+  .gc-card::before{
+    content:''; position:absolute; top:-1px; left:-1px; right:-1px; height:3px;
+    background:linear-gradient(90deg, var(--saffron), var(--gold));
+  }
+  .gc-card .frame{ aspect-ratio:1/1; margin-bottom:16px; overflow:hidden; }
+  .gc-card .frame img{ transition:transform .5s ease; }
+  .gc-card:hover .frame img{ transform:scale(1.06); }
+  .gc-card .tag{ color:var(--saffron); }
+
+  .ph-tile{
+    width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    background:linear-gradient(135deg, var(--cream-soft), #f1e3c8);
+    color:var(--ink-soft); font-size:12px; letter-spacing:.04em; text-align:center; padding:14px;
+  }
+  .ph-tile svg{ width:32px; height:32px; opacity:.5; }
+
+  .gc-location-strip{
+    margin-top:56px; padding:34px 32px; background:var(--maroon-deep); color:var(--cream-soft);
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px;
+    position:relative; z-index:1;
+  }
+  .gc-location-strip .tag{ color:var(--saffron-light); }
+  .gc-location-strip h3{ color:var(--cream-soft); font-size:26px; margin:6px 0 8px; }
+  .gc-location-strip p{ color:rgba(246,236,217,.8); font-size:15px; max-width:440px; }
+
+  .gc-cta{ text-align:center; margin-top:64px; position:relative; z-index:1; }
+  .gc-cta h3{ font-size:clamp(26px,3.2vw,34px); margin-bottom:10px; }
+  .gc-cta p{ color:var(--ink-soft); margin-bottom:22px; font-size:15.5px; }
+
+  .btn-shimmer{ position:relative; overflow:hidden; }
+  .btn-shimmer::after{
+    content:''; position:absolute; top:0; left:-60%; width:50%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
+    transform:skewX(-20deg); transition:left .6s ease;
+  }
+  .btn-shimmer:hover::after{ left:120%; }
 
   /* ---------- Gifting (dark) ---------- */
   .gifting{
@@ -336,6 +414,11 @@
     html{ scroll-behavior:auto; }
     .reveal{ opacity:1; transform:none; transition:none; }
     .scroll-cue .stem{ animation:none; }
+    .gc-particle{ animation:none; opacity:.2; }
+    .gc-card{ transition:none; }
+    .gc-card:hover{ transform:none; }
+    .gc-card:hover .frame img{ transform:none; }
+    .btn-shimmer::after{ display:none; }
   }
 
   /* ---------- Responsive ---------- */
@@ -347,390 +430,11 @@
     .gift-grid.reverse .gift-img, .gift-grid.reverse .gift-text{ order:0; }
     .foot-grid{ grid-template-columns:1fr 1fr; }
     .foot-grid > div:first-child{ grid-column:1 / -1; }
-    .jm-grid{ grid-template-columns:1fr; max-width:460px; margin:0 auto; }
+    .gc-grid{ grid-template-columns:repeat(2, 1fr); }
+    .gc-location-strip{ text-align:center; justify-content:center; }
   }
   @media (max-width:720px){
     .nav-links{
       position:fixed; top:0; right:0; height:100vh; width:min(78vw, 320px);
       background:var(--maroon-deep); flex-direction:column; justify-content:center; gap:30px;
-      transform:translateX(100%); transition:transform .4s ease; z-index:120;
-    }
-    .nav-links.open{ transform:translateX(0); }
-    .nav-links a{ color:var(--cream-soft) !important; font-size:15px; }
-    .nav-toggle{ display:block; z-index:130; }
-    section{ padding:76px 0; }
-    .sweet-grid{ grid-template-columns:1fr 1fr; gap:22px 16px; }
-    .foot-grid{ grid-template-columns:1fr; gap:34px; }
-    .hero-content{ padding:180px 0 70px; }
-    .announce-bar{ font-size:11.5px; padding:8px 12px; }
-    .fab-whatsapp{ width:52px; height:52px; bottom:16px; right:16px; }
-  }
-</style>
-</head>
-<body>
-
-<!-- ============ NAV ============ -->
-<header id="siteHeader">
-  <div class="announce-bar">
-    Janmashtami Special Prashad now available <a href="#janmashtami">View Collection →</a>
-  </div>
-  <nav class="wrap">
-    <a href="#top" class="brand">
-      <img src="logo.jpg" alt="Thakur Ji Sweets crest" class="brand-mark" style="border-radius:50%; object-fit:cover;">
-      <span class="brand-word">Thakur Ji Sweets</span>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#story">Our Story</a>
-      <a href="#sweets">Sweets</a>
-      <a href="#janmashtami" class="nav-jm">Janmashtami</a>
-      <a href="#gifting">Gift Boxes</a>
-      <a href="#visit">Visit</a>
-      <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="btn order-link" data-item="your sweets">Order Now</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
-  </nav>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <img src="jalebi-rabri-hero.jpg" alt="Fresh jalebi with rabri, saffron and pistachio" class="hero-img">
-  <div class="hero-content wrap">
-    <svg class="hero-crest" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 8 L58 34 L50 30 L42 34 Z" fill="#E4CA84"/>
-      <path d="M50 30 L50 60" stroke="#E4CA84" stroke-width="2.5"/>
-      <path d="M32 30 L44 40 M68 30 L56 40" stroke="#E4CA84" stroke-width="2.5" fill="none"/>
-      <circle cx="50" cy="46" r="3" fill="#E4CA84"/>
-      <path d="M50 60 C 30 60 22 78 30 92 C 34 82 42 76 50 76 C 58 76 66 82 70 92 C 78 78 70 60 50 60 Z" stroke="#E4CA84" stroke-width="2" fill="none"/>
-    </svg>
-    <span class="eyebrow">Birhana Road · Kanpur</span>
-    <h1>Thakur Ji Sweets</h1>
-    <p class="hero-tagline">Pure Desi Ghee Preparation &nbsp;·&nbsp; Pure Taste &nbsp;·&nbsp; Devine Blessing</p>
-    <p class="hero-sub">Handcrafted mithai, laddus and premium gift boxes — made fresh in pure desi ghee, the way Kanpur has always liked its sweets.</p>
-    <div class="hero-ctas">
-      <a href="#sweets" class="btn btn-solid">Explore Our Sweets</a>
-      <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="btn order-link" data-item="your sweets">Order on WhatsApp</a>
-    </div>
-  </div>
-  <div class="scroll-cue"><span>Scroll</span><span class="stem"></span></div>
-</section>
-
-<!-- ============ JANMASHTAMI SPECIAL ============ -->
-<section class="janmashtami" id="janmashtami">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="jm-badge">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 C 9 7 8 11 12 22 C 16 11 15 7 12 2 Z" stroke="#E4CA84" stroke-width="1.4"/><path d="M12 6 C 11 9 10.5 12 12 18 C 13.5 12 13 9 12 6 Z" fill="#E4CA84"/><circle cx="12" cy="9.5" r="1.3" fill="#233B6E"/></svg>
-        Janmashtami Special
-      </span>
-      <h2>Auspicious Pure Desi Ghee Mithai</h2>
-      <p>Specially prepared for Krishna Janmashtami — wholesome, festive prashad made the traditional way, in pure desi ghee.</p>
-    </div>
-
-    <div class="jm-grid">
-      <div class="jm-card reveal">
-        <div class="frame"><img src="kharbuja-barfi.jpg" alt="Kharbuje ke beeje ki barfi, melon seed barfi" loading="lazy"></div>
-        <span class="tag">Janmashtami Special</span>
-        <h3>Kharbuje Ke Beeje Ki Barfi</h3>
-        <p>Roasted melon seeds, almonds, pistachio and sesame, bound in pure ghee — a wholesome offering for the celebration.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Kharbuje Ke Beeje Ki Barfi (Janmashtami Special)">Order This <span>→</span></a>
-      </div>
-
-      <div class="jm-card reveal">
-        <div class="frame"><img src="nariyal-barfi.jpg" alt="Nariyal ki barfi, coconut barfi" loading="lazy"></div>
-        <span class="tag">Janmashtami Special</span>
-        <h3>Nariyal Ki Barfi</h3>
-        <p>Soft, melt-in-mouth coconut barfi finished with pistachio and a touch of cardamom — a classic offering sweet.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Nariyal Ki Barfi (Janmashtami Special)">Order This <span>→</span></a>
-      </div>
-
-      <div class="jm-card reveal">
-        <div class="frame"><img src="kesariya-rabri.jpg" alt="Kesariya rabri, saffron rabri" loading="lazy"></div>
-        <span class="tag">Janmashtami Special</span>
-        <h3>Kesariya Rabri</h3>
-        <p>Slow-simmered saffron milk, thickened the traditional way and topped with almond, pistachio and rose petals.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Kesariya Rabri (Janmashtami Special)">Order This <span>→</span></a>
-      </div>
-    </div>
-
-    <div class="jm-cta reveal">
-      <p>Prashad boxes made fresh to order — reserve yours ahead of the festival.</p>
-      <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="btn btn-solid order-link" data-item="a Janmashtami Prashad Box">Order Janmashtami Prashad</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ STORY ============ -->
-<section class="story" id="story">
-  <div class="wrap story-grid">
-    <div class="story-text reveal">
-      <span class="eyebrow">Our Story</span>
-      <h2>A Legacy Rolled in Ghee</h2>
-      <p>At Thakur Ji Sweets, every batch begins the same way it always has — pure desi ghee, slow hands and no shortcuts. Our kaarigars roast, fry and shape each mithai the traditional way, so the jalebi still crackles and the laddu still melts exactly as it should.</p>
-      <p>The name Thakur Ji carries a promise: sweets made with the same care you'd offer at home, worthy of a festival table or a Prasad thali alike. From our counter on Birhana Road, that promise travels across Kanpur, one box at a time.</p>
-      <p class="story-quote">"Meetha jo banaye, har pal yaadgaar."</p>
-    </div>
-    <div class="story-img reveal">
-      <div class="frame"><img loading="lazy" decoding="async" src="instagram-post.png" alt="Enjoying a gulab jamun at Thakur Ji Sweets, Birhana Road"></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider">
-  <span class="line"></span>
-  <svg viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3 L24 14 L20 12 L16 14 Z" fill="#BE9A4E"/><path d="M20 12 L20 24" stroke="#BE9A4E" stroke-width="1.6"/><path d="M12 12 L18 18 M28 12 L22 18" stroke="#BE9A4E" stroke-width="1.6"/><path d="M20 24 C 10 24 6 34 11 42 C 13 36 17 32 20 32 C 23 32 27 36 29 42 C 34 34 30 24 20 24 Z" stroke="#BE9A4E" stroke-width="1.4" fill="none"/></svg>
-  <span class="line"></span>
-</div>
-
-<!-- ============ SWEETS ============ -->
-<section class="sweets" id="sweets">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Our Signature Mithai</span>
-      <h2>Made Fresh, Every Single Day</h2>
-      <p>Each sweet is finished in pure desi ghee — no shortcuts, no substitutes. A few of our best-loved favourites:</p>
-    </div>
-    <div class="sweet-grid">
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="jalebi-rabri-hero.jpg" alt="Jalebi with malai rabri"></div>
-        <span class="tag">Fresh Daily</span>
-        <h3>Jalebi</h3>
-        <p>Hot, crisp saffron-syrup coils, served with malai rabri and a scatter of pistachio.</p>
-        <span class="sweet-price">Gift packs from 250g</span>
-        <br><a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Jalebi">Order This <span>→</span></a>
-      </div>
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="besan-laddu.jpg" alt="Besan laddu"></div>
-        <span class="tag">Classic</span>
-        <h3>Besan Laddu</h3>
-        <p>Roasted gram flour rounds, hand-shaped and finished in clarified ghee.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Besan Laddu">Order This <span>→</span></a>
-      </div>
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="motichoor-laddu.jpg" alt="Motichoor laddu with silver leaf"></div>
-        <span class="tag">Festival Favourite</span>
-        <h3>Motichoor Laddu</h3>
-        <p>Tiny ghee-fried pearls bound together and finished with a silver leaf.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Motichoor Laddu">Order This <span>→</span></a>
-      </div>
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="chequered-barfi.jpg" alt="Chequered barfi in pistachio, saffron and cardamom"></div>
-        <span class="tag">Premium</span>
-        <h3>Chequered Barfi</h3>
-        <p>Three-layer barfi — pistachio, saffron and cardamom — topped with almond.</p>
-        <span class="sweet-price">₹1200 / kg</span>
-        <br><a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Chequered Barfi">Order This <span>→</span></a>
-      </div>
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="dryfruit-laddu-bowl.jpg" alt="Dry fruit laddu"></div>
-        <span class="tag">Nutty & Rich</span>
-        <h3>Dry Fruit Laddu</h3>
-        <p>Whole almonds, cashews and pistachios, bound in ghee and honey.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Dry Fruit Laddu">Order This <span>→</span></a>
-      </div>
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="dryfruit-roll.jpg" alt="Dry fruit and fig roll with rose petals"></div>
-        <span class="tag">Sugar-free Friendly</span>
-        <h3>Anjeer &amp; Dry Fruit Roll</h3>
-        <p>Fig, date and mixed nuts rolled and finished with dried rose petals.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Anjeer &amp; Dry Fruit Roll">Order This <span>→</span></a>
-      </div>
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="nutty-laddu.jpg" alt="Rustic mixed nut laddu"></div>
-        <span class="tag">Everyday Favourite</span>
-        <h3>Mixed Nut Laddu</h3>
-        <p>A rustic, coarse-ground laddu packed with almond, cashew and pistachio.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Mixed Nut Laddu">Order This <span>→</span></a>
-      </div>
-
-      <div class="sweet-card reveal">
-        <div class="frame"><img loading="lazy" decoding="async" src="ghewar.png" alt="Rajasthani ghewar with rabri and silver leaf"></div>
-        <span class="tag">Seasonal Special</span>
-        <h3>Rajasthani Ghewar</h3>
-        <p>Honeycomb-textured disc, finished with rabri, pistachio and silver leaf.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="card-order order-link" data-item="Rajasthani Ghewar">Order This <span>→</span></a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ GIFTING ============ -->
-<section class="gifting" id="gifting">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Gift Boxes &amp; Hampers</span>
-      <h2>Gifting, Elevated</h2>
-      <p>Festival hampers and wedding favours, boxed the way Thakur Ji deserves — generous, handsome, and ready to hand over.</p>
-    </div>
-
-    <div class="gift-grid">
-      <div class="gift-img reveal"><div class="frame"><img loading="lazy" decoding="async" src="assorted-mithai-box.jpg" alt="Assorted premium mithai gift box"></div></div>
-      <div class="gift-text reveal">
-        <h3>The Assortment Box</h3>
-        <p>A curated tray of our most-loved mithai in one box — rose ladoo, kesar peda, pista roll and more, arranged for festival gifting or a wedding return favour.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="btn order-link" data-item="the Assortment Gift Box">Enquire for This Box</a>
-      </div>
-    </div>
-
-    <div class="gift-grid reverse">
-      <div class="gift-img reveal"><div class="frame"><img loading="lazy" decoding="async" src="dryfruit-giftbox.png" alt="Dry fruit sweets gift box"></div></div>
-      <div class="gift-text reveal">
-        <h3>The Dry Fruit Collection</h3>
-        <p>Whole almonds, cashews and pistachios set in ghee and syrup, packed four to a box under our signature gold-lined lid. A gift that travels well and keeps longer.</p>
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="btn order-link" data-item="the Dry Fruit Collection Gift Box">Enquire for This Box</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ VISIT ============ -->
-<section class="visit" id="visit">
-  <div class="wrap visit-grid">
-    <div class="visit-text reveal">
-      <span class="eyebrow">Visit Us</span>
-      <h2>The Sweet Counter on Birhana Road</h2>
-
-      <div class="info-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-        <div>
-          <h4>Address</h4>
-          <p>Kanodia Building, 58/74, Birhana Road, Naughara,<br>Kanpur, Uttar Pradesh 208001</p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        <div>
-          <h4>Hours</h4>
-          <p>Open daily, 7:00 AM – 11:00 PM</p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div>
-          <h4>Call or WhatsApp</h4>
-          <p><a href="tel:+919389354113">93893 54113</a> &nbsp;·&nbsp; <a href="tel:+918318136393">83181 36393</a></p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
-        <div>
-          <h4>How to Order</h4>
-          <p>Dine-in, counter service and takeaway. Gift boxes made to order — call, WhatsApp, or visit us.</p>
-        </div>
-      </div>
-
-      <div class="visit-ctas">
-        <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="btn btn-dark">Order on WhatsApp</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Thakur+Ji+Sweets+Kanodia+Building+58%2F74+Birhana+Road+Naughara+Kanpur+Uttar+Pradesh+208001" target="_blank" rel="noopener" class="btn btn-dark">Get Directions</a>
-      </div>
-    </div>
-
-    <div class="visit-img reveal">
-      <div class="frame"><img loading="lazy" decoding="async" src="snacks-tray.jpg" alt="Fresh snacks tray at Thakur Ji Sweets"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOCIAL ============ -->
-<section class="social">
-  <div class="wrap">
-    <div class="social-frame reveal">
-      <div class="frame"><img loading="lazy" decoding="async" src="instagram-post.png" alt="Thakur Ji Sweets on Instagram"></div>
-    </div>
-    <span class="eyebrow reveal">@thakurjisweetskanpur</span>
-    <h2 class="reveal">Meetha Jo Banaye, Har Pal Yaadgaar</h2>
-    <p class="reveal">Follow along for new gift boxes, festive specials and a closer look at the kitchen behind the counter.</p>
-    <a href="https://instagram.com/thakurjisweetskanpur" target="_blank" rel="noopener" class="btn btn-dark reveal">Follow on Instagram</a>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand">
-          <img src="logo.jpg" alt="Thakur Ji Sweets crest" style="border-radius:50%; object-fit:cover;">
-          <span>Thakur Ji Sweets</span>
-        </div>
-        <p>Pure Desi Ghee Preparation · Pure Taste · Devine Blessing.<br>Handcrafted mithai from Birhana Road, Kanpur.</p>
-      </div>
-      <div class="foot-links">
-        <h4>Explore</h4>
-        <a href="#story">Our Story</a>
-        <a href="#sweets">Sweets</a>
-        <a href="#janmashtami">Janmashtami</a>
-        <a href="#gifting">Gift Boxes</a>
-        <a href="#visit">Visit Us</a>
-      </div>
-      <div class="foot-links">
-        <h4>Find Us</h4>
-        <a href="https://www.google.com/maps/search/?api=1&query=Thakur+Ji+Sweets+Kanodia+Building+58%2F74+Birhana+Road+Naughara+Kanpur+Uttar+Pradesh+208001" target="_blank" rel="noopener">Kanodia Building, 58/74<br>Birhana Road, Naughara<br>Kanpur, UP 208001</a>
-        <a href="https://instagram.com/thakurjisweetskanpur" target="_blank" rel="noopener">Instagram</a>
-      </div>
-      <div class="foot-links">
-        <h4>Call / WhatsApp</h4>
-        <a href="tel:+919389354113">93893 54113</a>
-        <a href="tel:+918318136393">83181 36393</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Thakur Ji Sweets. All rights reserved.</span>
-      <a href="https://thakurjisweets.com">thakurjisweets.com</a>
-    </div>
-  </div>
-</footer>
-
-<!-- Floating order button -->
-<a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="fab-whatsapp order-link" data-item="your sweets" aria-label="Order on WhatsApp">
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20l1.3-4.2A8 8 0 1 1 9 18.6L4 20Z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 10.2c.3 2.4 2.6 4.7 5 5" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg>
-</a>
-
-<script>
-  // smart WhatsApp order links: pre-fill the message with the item name
-  document.querySelectorAll('.order-link').forEach(a => {
-    const item = a.dataset.item || 'your sweets';
-    const msg = `Hi! I'd like to order ${item} from Thakur Ji Sweets.`;
-    const base = a.getAttribute('href').split('?')[0];
-    a.setAttribute('href', `${base}?text=${encodeURIComponent(msg)}`);
-  });
-
-  // header background on scroll
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  // mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  // reveal on scroll
-  const revealEls = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('in'));
-  }
-  // safety net: never leave content permanently invisible if the observer misses it
-  window.addEventListener('load', () => {
-    setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 2500);
-  });
-</script>
-</body>
-</html>
+      transform:translateX(100%); transition
