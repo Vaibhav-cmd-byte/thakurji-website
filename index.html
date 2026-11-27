@@ -599,7 +599,12 @@
 .phone img{width:100%;height:100%;object-fit:cover;display:block}
 .phone.mid{width:clamp(110px,23vw,230px);transform:translateY(-14px)}
 .phone:not(.mid){opacity:.95}
-@media(max-width:820px){.play-grid{grid-template-columns:1fr}.phones{order:-1}}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.6vw,16px)}
+.shot{aspect-ratio:1040/480;border-radius:clamp(10px,1.6vw,18px);border:clamp(3px,.5vw,5px) solid #14060b;background:#14060b;box-shadow:0 20px 40px rgba(0,0,0,.45),0 0 0 1px rgba(228,202,132,.35);overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot.big{grid-column:1/-1}
+.play-alt{font-size:.85rem;margin-top:10px}.play-alt a{color:var(--gold-light)}
+@media(max-width:820px){.play-grid{grid-template-columns:1fr}.phones,.shots{order:-1}}
 @media(prefers-reduced-motion:no-preference){.phone{transition:transform .5s ease}.phones:hover .phone.mid{transform:translateY(-22px)}}
 </style>
 </head>
@@ -633,7 +638,7 @@
       <a href="#diwali" class="nav-badge">Diwali</a>
       <a href="#gifting">Gift Boxes</a>
       <a href="#visit">Visit</a>
-      <a href="game.html">Play</a>
+      <a href="mithai-empire/">Play</a>
       <a href="https://wa.me/919389354113" target="_blank" rel="noopener" class="btn order-link" data-item="your sweets">Order Now</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
@@ -1049,16 +1054,17 @@
   <div class="wrap play-grid">
     <div>
       <span class="eyebrow reveal">Play &amp; Win</span>
-      <h2 class="reveal">The Festival Rush</h2>
-      <p class="reveal">Run the counter at Thakur Ji Sweets for a day. Read the customer's order, pick the right sweets and pack the gift box before the queue grows. A free little game, in English and हिन्दी.</p>
-      <ul class="play-pills reveal"><li>Free</li><li>No download</li><li>English &amp; हिन्दी</li></ul>
-      <div class="reveal"><a href="game.html" class="btn btn-solid">Play Now</a></div>
-      <p class="play-note reveal">Prices and story in the game are just for fun. Ask at the shop for today's real prices.</p>
+      <h2 class="reveal">Mithai Empire</h2>
+      <p class="reveal">Become the malik of Thakur Ji Sweets in a 3D shop. Walk and run around the floor, sort out angry customers and sour milk, take big risks on wedding orders and export deals, and keep your customers' goodwill high. Dadaji guides you, one story chapter at a time, as your small counter grows into an empire.</p>
+      <ul class="play-pills reveal"><li>Free</li><li>3D</li><li>Play in your browser</li><li>Best in landscape</li></ul>
+      <div class="reveal"><a href="mithai-empire/" class="btn btn-solid">Play Mithai Empire</a></div>
+      <p class="play-note reveal">Turn your phone sideways. The first load is about 45 MB, so Wi-Fi is best. Prices and story in the game are just for fun; ask at the shop for today's real prices.</p>
+      <p class="play-alt reveal">Prefer something quick? Play the classic <a href="game.html">Festival Rush</a> packing game.</p>
     </div>
-    <div class="phones reveal" aria-hidden="false">
-      <div class="phone"><img loading="lazy" decoding="async" src="game-story.jpg" alt="Story screen of the Thakur Ji Sweets game"></div>
-      <div class="phone mid"><img loading="lazy" decoding="async" src="game-title.jpg" alt="Title screen of Thakur Ji Sweets: The Festival Rush"></div>
-      <div class="phone"><img loading="lazy" decoding="async" src="game-pack.jpg" alt="Packing a gift box in the game"></div>
+    <div class="shots reveal">
+      <div class="shot big"><img loading="lazy" decoding="async" src="mithai-empire-play.jpg" alt="Mithai Empire: the owner walking inside the 3D Thakur Ji Sweets shop"></div>
+      <div class="shot"><img loading="lazy" decoding="async" src="mithai-empire-story.jpg" alt="Dadaji telling the story in Mithai Empire"></div>
+      <div class="shot"><img loading="lazy" decoding="async" src="mithai-empire-decision.jpg" alt="A big-deal decision with risk and reward in Mithai Empire"></div>
     </div>
   </div>
 </section>
@@ -1100,7 +1106,7 @@
         <a href="#reel">Instagram Reel</a>
         <a href="#gifting">Gift Boxes</a>
         <a href="#visit">Visit Us</a>
-        <a href="game.html">Play the Game</a>
+        <a href="mithai-empire/">Play Mithai Empire</a>
       </div>
       <div class="foot-links">
         <h4>Find Us</h4>
