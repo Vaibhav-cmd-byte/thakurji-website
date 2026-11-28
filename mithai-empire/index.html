@@ -70,6 +70,21 @@ body {
 	display: none;
 }
 
+#status { background: radial-gradient(circle at 50% 35%, #5A1327 0%, #2C0A15 75%) !important; }
+#status-progress { visibility: hidden; }
+#tj-load {
+	display: flex; flex-direction: column; align-items: center; text-align: center;
+	font-family: Georgia, 'Times New Roman', serif; color: #F6ECD9; padding: 0 1.5rem;
+}
+#tj-logo { width: 112px; height: 112px; border-radius: 50%; border: 2px solid #BE9A4E; object-fit: cover; box-shadow: 0 0 30px rgba(228,202,132,.25); animation: tjpulse 1.8s ease-in-out infinite; }
+#tj-title { font-size: 1.7rem; margin-top: .9rem; letter-spacing: .02em; }
+#tj-sub { font-size: .8rem; color: #E4CA84; letter-spacing: .25em; text-transform: uppercase; margin-top: .25rem; }
+#tj-bar { width: min(280px, 70vw); height: 6px; border-radius: 6px; background: rgba(246,236,217,.15); margin-top: 1.4rem; overflow: hidden; }
+#tj-fill { height: 100%; width: 0; background: linear-gradient(90deg, #BE9A4E, #E4CA84); border-radius: 6px; transition: width .25s ease-out; }
+#tj-text { font-family: Arial, sans-serif; font-size: .85rem; margin-top: .7rem; color: #F6ECD9; min-height: 1.2em; }
+#tj-tip { font-family: Arial, sans-serif; font-size: .72rem; margin-top: .35rem; color: rgba(246,236,217,.6); }
+@keyframes tjpulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
 #status-progress {
 	bottom: 10%;
 	width: 50%;
@@ -105,11 +120,19 @@ body {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
+			<div id="tj-load">
+				<img id="tj-logo" src="splash-logo.jpg" alt="Thakur Ji Sweets" width="112" height="112">
+				<div id="tj-title">Mithai Empire</div>
+				<div id="tj-sub">Thakur Ji Sweets</div>
+				<div id="tj-bar"><div id="tj-fill"></div></div>
+				<div id="tj-text">Getting the shop ready&hellip;</div>
+				<div id="tj-tip">First time only. Next time it opens in seconds.</div>
+			</div>
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
+		<script src="fast-load.js"></script>
 		<script src="index.js"></script>
 		<script>
 const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":6311868,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"serviceWorker":"index.service.worker.js"};
@@ -202,13 +225,23 @@ const engine = new Engine(GODOT_CONFIG);
 		setStatusMode('progress');
 		engine.startGame({
 			'onProgress': function (current, total) {
-				if (current > 0 && total > 0) {
-					statusProgress.value = current;
-					statusProgress.max = total;
-				} else {
-					statusProgress.removeAttribute('value');
-					statusProgress.removeAttribute('max');
+				const fill = document.getElementById('tj-fill');
+				const text = document.getElementById('tj-text');
+				const net = window.__tjNet;
+				if (!fill || !text) { return; }
+				let frac = total > 0 ? current / total : 0;
+				if (net && net.total > 0 && net.loaded > 0) {
+					frac = Math.min(net.loaded / net.total, 1);
+					const mb = (b) => (b / 1048576).toFixed(1);
+					text.textContent = frac >= 0.999
+						? 'Opening the shop\u2026'
+						: 'Downloading ' + mb(net.loaded) + ' of ' + mb(net.total) + ' MB';
+				} else if (frac >= 0.999) {
+					text.textContent = 'Opening the shop\u2026';
+				} else if (frac > 0) {
+					text.textContent = 'Loading ' + Math.round(frac * 100) + '%';
 				}
+				fill.style.width = Math.round(frac * 100) + '%';
 			},
 		}).then(() => {
 			setStatusMode('hidden');
